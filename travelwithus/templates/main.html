@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+
+
+    />
+    <style>
+    .card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+   .card-img-top1 {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+.demo-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.demo-bg {
+  opacity: 0.4;
+
+ 
+  
+}
+
+.demo-content {
+  position: relative;
+}
+    </style>
+    <title>Backpacker</title>
+  </head>
+  <body style="background-color: lightblue">
+    <nav class="navbar navbar-light bg-light">
+    <ul class="nav navbar-nav navbar-left">
+    <li>
+      <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+        <img
+          src="{% static 'images/bd.jpg' %}"
+          width="50"
+          height="50"
+          class="d-inline-block align-center rounded-circle"
+          alt=""
+        />
+       <b> Beyond Dreams </b>
+      </a>
+      </li>
+      </ul>
+      {% if request.user.is_authenticated %}
+
+      
+
+      <ul class="nav navbar-nav navbar-right">
+      <li class="text-white">
+       
+      <span>Hello @<b><a href="{% url 'package' %}">{{request.user.username}}</a></b></span>
+      {% if  request.user.is_customer is True and  not 'bookinglist' in request.path  %}
+      <a href="{% url 'bookinglist' %}" class="link-dark">
+          <button type="button" class="btn btn-info"style="margin:10px;">Your Bookings</button>
+        </a>
+        <a href="{% url 'Agentdetails' request.user.username %}" class="link-dark">
+          <button type="button" class="btn btn-info"style="margin:10px;">Agent Details</button>
+        </a>
+        {% endif %}
+      {% if  request.user.is_agent is True and  not 'create' in request.path  %}
+      <a href="{% url 'create' %}" class="link-dark">
+          <button type="button" class="btn btn-info"style="margin:10px;">Create Package</button>
+        </a>
+        <a href="{% url 'bookinglist_agent' %}" class="link-dark">
+          <button type="button" class="btn btn-info"style="margin:10px;">View Bookings</button>
+        </a>
+        {% endif %}
+        <a href="{% url 'logout' %}" class="link-dark">
+          <button type="button" class="btn btn-danger">Logout</button>
+        </a>
+        </li>
+      </ul>
+      {% endif %}
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

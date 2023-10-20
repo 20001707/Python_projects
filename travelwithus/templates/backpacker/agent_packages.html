@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<br>
+
+<div class="container text-center text-white">
+<h3>Your Packages</h3>
+{% if pack %}
+ {% for p in pack %}
+
+
+ 
+  <a href="{% url 'package-status' p.id %}"  style="text-decoration:none ; color:#fff">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card text-white text-center bg-dark">
+      <div class="card-header">{{ p.title  }}
+    by @{{ p.agent }}
+    </div>
+      <div class="card-body">
+      <div class="demo-wrap">
+        <img src="{{p.image.url}}" class="card-img-top demo-bg " alt="...">
+        <div class="card-img-overlay">
+        <h1 class="card-title demo-content">{{ p.Location }}</h1>
+        </div>
+        </div>
+         <ul class="list-group list-group-flush bg-dark">
+         <li class="list-group-item bg-dark"><p class="card-text">Departure Location : {{ p.dloc }} </p></li>
+        <li class="list-group-item bg-dark"><p class="card-text">Duration: {{ p.duration }} days</p></li>
+        <li class="list-group-item bg-dark"><p class="card-text">Date : {{ p.ddate }} </p></li>
+        <li class="list-group-item bg-dark">  <button type="button" class="btn btn-info">
+        Cost <span class="badge bg-secondary">₹{{p.cost}}</span>
+          </button></li>
+          
+        
+          <a href="{% url 'package-edit' p.id %}"  style="text-decoration:none ; color:#fff">
+          <button type="button" class="btn btn-info">
+           Edit Package
+          </button></li>
+          </a> 
+          
+        </ul>
+      </div>
+      <div class="card-footer text-muted"> Posted 
+    {{p.posteddate|timesince}} ago
+  </div>
+  </div>
+  <br>
+  </a>
+  {% endfor %}
+
+ {% else %}
+ <h1 class="text-white text-center"> You don't have any packages</h1>
+ {% endif %}
+ </div>
+
+
+ {% endblock content %}

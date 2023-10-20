@@ -1,0 +1,43 @@
+{% extends 'main.html' %} 
+
+{% block content %} 
+<br>
+<div class="container">
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card text-white text-center bg-dark">
+      <div class="card-header">{{ package.title  }}
+    by @{{ package.agent }}
+    </div>
+      <div class="card-body">
+      <div class="demo-wrap">
+        <img src="{{package.image.url}}" class="card-img-top demo-bg " alt="...">
+        <div class="card-img-overlay">
+        <h1 class="card-title demo-content">{{ package.Location }}</h1>
+        </div>
+        </div>
+         <ul class="list-group list-group-flush bg-dark">
+         <li class="list-group-item bg-dark"><p class="card-text">Departure Location : {{ package.dloc }} </p></li>
+        <li class="list-group-item bg-dark"><p class="card-text">Total Bookings : {{ x }} </p></li>
+        <li class="list-group-item bg-dark"><p class="card-text">Date : {{ package.ddate }} </p></li>
+        <li class="list-group-item bg-dark">  <button type="button" class="btn btn-info">
+        Price: <span class="badge bg-secondary">₹{{package.cost}}</span>
+          </button></li>
+          Booked Users:
+         {% for p in ps%}
+        <li class="list-group-item bg-dark"><a href="{% url 'user-detail' p.id %}">{{p}}</li>
+          {% endfor %}
+          
+        </ul>
+      </div>
+      <div class="card-footer text-muted"> Posted 
+    {{package.posteddate|timesince}} ago
+  </div>
+  </div>
+
+</div>
+
+
+
+
+{% endblock content %}

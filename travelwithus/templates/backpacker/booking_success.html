@@ -1,0 +1,22 @@
+{% extends 'main.html' %} 
+
+{% block content %} 
+<br>
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold ">BOOKING SUCCESSFUL..!</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-3 mb-4 text-white">Your booking for<b> {{order.nos}} </b> slots for <b> {{order.package}} </b> package is now successful with an amount of <B> {{order.price}}</b>
+        <h2>Wish you a Happy Journy.</h2>
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{% url 'package' %}">
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Go back home</button></a>
+          <a href="{% url 'bookinglist' %}">
+          <button type="button" class="btn btn-outline-info btn-lg px-4">View your bookings</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

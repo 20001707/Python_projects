@@ -1,0 +1,19 @@
+{% extends 'main.html' %} {% block content %}
+<br>
+<div class="container">
+<li class="list-group-item bg-dark text-white">
+<form method="POST" action=".">
+ {% csrf_token %}
+       <label> Number of slots to cancel: </label>
+         <input type="number" min=1 class="form-control" min=1 max={{ord.nos}} placeholder="Number of slots"  name="nos" >
+         <br>
+        
+         <a href="{% url 'booking-del' ord.id %}" style="text-decoration:none ; color:#fff"> <button type="submit" class="btn btn-danger">
+            Cancel booking
+          </button>
+</form>
+</a> </li>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'main.html' %} 
+
+{% block content %} 
+<br>
+
+<div class="contianer text-white ">
+<h4>User Detail</h4>
+
+<div class="card text-white bg-dark rounded-0" style="">
+  
+  <div class="card-body">
+    <h5 class="card-title">{{u.username}}</h5>
+    <p class="card-text"></p>
+    <img src="{{u.aadhar_image.url}}" onclick="window.open(this.src)">
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item bg-dark">Email:{{u.email}}</li>
+    <li class="list-group-item bg-dark">Phone:{{u.phone}}</li>
+    <li class="list-group-item bg-dark">Aadhar No:{{u.aadhar_no}}</li>
+
+
+
+
+    {% comment %} <li class="list-group-item bg-dark">{% for ord in orders %}
+    {% if ord.boarding %}
+
+    {{ord.boarding}}
+
+    {{ord.}}
+    {% endfor %}  {% endcomment %}
+    </li>
+  </ul>
+ 
+</div>
+
+</div>
+{% endblock content %}
+
+

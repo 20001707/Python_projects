@@ -1,0 +1,174 @@
+
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div>
+  <font color="#ffffff">
+ 
+ <br>
+  <div class="card card-body  bg-dark">
+
+      <h3>Filter Packages</h3>
+      <form method="GET" action=".">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="destination" placeholder=" Location (Destination) " />
+                    
+                </div>
+            </div>     
+             <div class="form-group col-md-6">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="departure" placeholder="Location (Departure) " />
+                    
+                </div>
+            </div>     
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="viewCountMin">Min cost</label>
+            <input type="number" min=0 class="form-control" id="mincost" placeholder="min" name="min_cost">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="viewCountMax">Max cost</label>
+            <input type="number" min=0 class="form-control" id="maxcost" placeholder="max" name="max_cost">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="publishDateMin">Date : From</label>
+            <input type="date" class="form-control" id="datemin" name="min_date">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="publishDateMax">Date : To</label>
+            <input type="date" class="form-control" id="publishDateMax" name="max_date">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="category">Agent</label>
+            <select id="category" class="form-control" name="agent">
+              <option selected>Choose...</option>
+              {% for age in agents %}
+              <option value="{{ age }}">{{ age }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-md-3 ">
+            <label for="MinDur">Duration : From</label>
+            <input type="number" min=1 class="form-control" id="viewCountMin" placeholder="min" name="min_dur">
+          </div>
+          <div class="form-group col-md-3 ">
+            <label for="maxdur">Duration : To</label>
+            <input type="number" min=1 class="form-control" id="viewCountMax" placeholder="max" name="max_dur">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="category">Type</label>
+            <select id="category" class="form-control" name="type">
+             
+              
+              <option value='B'>Bus</option>
+              <option value='T'>Train</option>
+              <option value='F'>Flight</option>
+              
+            </select> 
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+</div>
+
+
+
+<br>
+<h3 class="text-center">Packages</h3>
+
+
+
+ <div class="container">
+ {% if packages %}
+
+    {% for package in packages  %}
+    
+
+  <a href="{% url 'package-det' package.id %}" style="text-decoration:none ; color:#fff">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card text-white text-center bg-dark">
+      <div class="card-header">{{ package.title  }}
+    by @{{ package.agent }}
+    </div>
+      <div class="card-body">
+      <div class="demo-wrap">
+        <img src="{{package.image.url}}" class="card-img-top demo-bg " alt="...">
+        <div class="card-img-overlay">
+        <h1 class="card-title demo-content">{{ package.Location }}</h1>
+        </div>
+        </div>
+         <ul class="list-group list-group-flush bg-dark">
+         <li class="list-group-item bg-dark">
+         <p class="card-text">Departure Location : {{ package.dloc }} </p>
+        <p class="card-text">Duration: {{ package.duration }} days</p>
+        <p class="card-text">Date : {{ package.ddate }} </p>
+       
+       <p class="card-text">Mode of Traveling : 
+       {% if package.mode == "T" %}
+       Train
+       {% elif package.mode == "B" %}
+       Bus
+       {% elif package.mode == "F" %}
+       Flight
+      {% endif %}
+        </p>
+         <button type="button" class="btn btn-info">
+        Cost <span class="badge bg-secondary">₹{{package.cost}}</span>
+          </button></li>
+          
+        </ul>
+      </div>
+      <div class="card-footer text-muted"> Posted 
+    {{package.posteddate|timesince}} ago
+  </div>
+  </div>
+  </div>
+  </div>
+<br>
+
+  </a>
+ 
+
+   {% endfor %}
+   {% else %}
+   <h1 class="text-white text-center"> No packages matching your search</h1>
+   {% endif %}
+
+  </div>
+  
+ 
+
+  
+{% comment %} 
+
+    <a href="/{{package.pk}}" style="text-decoration:none ; color:#fff">
+   
+<div class="card text-white text-center bg-dark  " style="margin:3em">
+  <div class="card-header">
+    {{ package.title }}
+  </div>
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{package.location}}</h5>
+    <p class="card-text">{{package.description}}</p>
+    <a href="#" class="btn btn-primary">₹{{package.cost}}</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{package.posteddate|timesince}} ago
+  </div>
+</div>
+</a> {% endcomment %}
+    
+</div>
+
+</font>
+</div> 
+    
+{% endblock content %}

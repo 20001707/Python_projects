@@ -1,0 +1,92 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<br />
+<br />
+
+<font color="#ffffff">
+  <div class="container">
+  {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+    <div class="card text-white bg-dark rounded-0">
+    
+      <div class="card-header"> By {{ package.agent }}</div>
+    
+      <div class="card-body">
+        
+        <img src="{{package.image.url}}"onclick="window.open(this.src)"
+        
+          class="card-img-top1"
+          style=""
+          alt="..."
+        />
+        <ul class="list-group list-group-flush bg-dark">
+          <li class="list-group-item bg-dark">
+            <h1 class="card-title">{{ package.Location }}</h1>
+            <p class="fst-italic">{{ package.description }}</p>
+            <button type="button" class="btn btn-outline-info">
+              Departure Location : {{ package.dloc }}
+            </button>
+          </li>
+
+          <li class="list-group-item bg-dark">
+            <button type="button" class="btn btn-outline-info">
+              Duration: {{ package.duration }} days
+            </button>
+            <button type="button" class="btn btn-outline-info">
+              Date : {{ package.ddate }}
+            </button>
+            Price: ₹
+            <input type="button" value={{ package.cost }} id="price" class="btn btn-outline-info">
+             
+            <button type="button" class="btn btn-outline-info">
+              {{ package.slots }} Slots remaining
+            </button>
+          </li>
+           
+        </ul>
+        <div class="card-footer text-muted">
+          <form method="POST">
+          
+           {% csrf_token %}
+          
+            
+           <div class="form-row">
+          <div class="form-group col-md-2 ">
+          
+            <input type="number" min=1 max={{package.slots}} class="form-control" id="slots" placeholder="Number of slots"  name="nos" oninput="multiply(this)">
+          </div>
+          <div class="form-group col-md-2 ">
+
+          Total Price:
+    
+            <input class="btn btn-primary" type="button" id="total" >
+          </div>
+          <div class="form-group col-md-3 ">
+          {% if package.mode == 'B'%}
+          <input type="text" placeholder="Boarding Station" name="station">
+          {% endif %}
+            <button type="submit" class="btn btn-danger">Book Now!</button>
+
+          </div>
+            
+
+          
+      </div>
+    </div>
+  </div>
+</font>
+<script>
+function multiply() {
+  a = Number(document.getElementById('slots').value);
+  b = Number(document.getElementById('price').value);
+  c = a * b;
+
+  document.getElementById('total').value = c;
+}
+
+</script>
+
+{% endblock content %}

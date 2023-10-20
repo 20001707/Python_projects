@@ -1,0 +1,35 @@
+{% extends 'main.html' %} {% block content %}
+<div class="container align-items-center">
+<font color="#ffffff">
+<div class="container">
+
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %}
+  <div class="card text-white text-center bg-dark p-4 align-middle">
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</font>
+</div>
+{% endblock content %}
