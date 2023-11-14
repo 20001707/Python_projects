@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        const header = document.querySelector('.Header');
+const nav = document.querySelector('.Navbar')
+const topOfNav = header.offsetTop;
+
+function fixNav(){
+    if (window.scrollY >= topOfNav){
+        nav.style.paddingTop = header.offsetHeight + 2 + 'px';
+    }
+    else{
+        nav.style.paddingTop = 0;
+    }
+}
+// for fixing the navbar at top
+window.addEventListener('scroll',fixNav);
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books &amp; More. Best Offers!
+    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img1a.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico">
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+
+let form = document.querySelecter('form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  return false;
+});
+    </script>
+</head>
+
+<body>
+    <!-- Header section -->
+    <div class="container-fluid bg-primary Header fixed-top">
+        <div class="row py-2 d-flex">
+            <!-- Logo -->
+            <div class="col logo offset-lg-1">
+                <a href="#">
+                    <img width="75" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                        alt="Flipkart" title="Flipkart">
+                </a>
+                <a href="#">Explore <span>Plus</span>
+                    <img width="10" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png">
+                </a>
+            </div>
+
+            <!-- Search -->
+            <div class="col col-md-4  search d-flex dropdown bg-white">
+                <input class="form-control dropdown-toggle" type="search"
+                    placeholder="Search for products, brands and more" aria-label="Search" id="navbarDropdown"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-search mt-2 ml-sm-1 text-primary"></i>
+                <div class="dropdown-menu col-12 search-item" aria-labelledby="navbarDropdown">
+                    <h6 class="ml-4">Discover More</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>mobiles</a>
+                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>t-shirts</a>
+                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>shoes</a>
+                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>laptop</a>
+                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>tv</a>
+                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>sarees</a>
+                </div>
+            </div>
+
+            <!-- Login -->
+            <div class="col dropdown login">
+                <button class="btn bg-white text-primary" type="button" id="loginMenuButton" >
+                <a href="login.html">Login</a>
+                
+                    
+                    
+                    
+                </button>
+            
+            </div>
+
+            <!-- More -->
+            <div class="col dropdown more">
+                <a class="btn dropdown-toggle text-white ml-lg-2 ml-sm-0" href="#" role="button" id="moreMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+
+                <div class="dropdown-menu more-list" aria-labelledby="moreMenuLink">
+                    <div class="d-flex">
+                        <i class="fa fa-bell text-primary ml-md-3 mt-2" aria-hidden="true"></i>
+                        <a class="dropdown-item" href="#">Notification Preferences</a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="d-flex">
+                        <i class="fa fa-archive text-primary ml-md-3 mt-2" aria-hidden="true"></i>
+                        <a class="dropdown-item" href="#">Sell On Flipkart</a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="d-flex">
+                        <i class="fa fa-question-circle text-primary ml-md-3 mt-2" aria-hidden="true"></i>
+                        <a class="dropdown-item" href="#">24x7 Customer Care</a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="d-flex">
+                        <i class="fa fa-chart-line text-primary ml-md-3 mt-2" aria-hidden="true"></i>
+                        <a class="dropdown-item" href="#">Advertise</a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="d-flex">
+                        <i class="fa fa-download text-primary ml-md-3 mt-2" aria-hidden="true"></i>
+                        <a class="dropdown-item" href="#">Download App</a>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <!-- become a seller -->
+            <div class="col col-md-2 d-flex justify-content-center">
+                <!-- <i class="fa fa-shopping-cart text-white mt-2" aria-hidden="true"></i> -->
+                <a class="btn text-white">Become a seller</a>
+            </div>
+             <!-- Cart -->
+             <div class="col col-md-1 d-flex justify-content-center">
+                <i class="fa fa-shopping-cart text-white mt-2" aria-hidden="true"></i>
+                <a class="btn text-white">Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <!--  <div class="container-fluid Navbar shadow-sm"> -->
+    <!-- <div class="carousel slide my-1" id="carouselExampleControls"> -->
+        <!-- <div class="container-fluid" id="first">
+            <div class="row">
+                <div class="Nav" id="col3">
+                    <div class="card" style="width: 165px; height:83px;" id="c2">
+                        <img src="grocery2.jpg" height="75px" width="100px">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"> -->
+
+
+
+        <div class="row">
+            <div class="Nav" id="col3" width="100%">
+                <div class="card" style="width: 115px; height:83px;" id="c2">
+                    <img src="grocery2.jpg" height="80px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Grocery
+                        </a>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:83px;" id="c2">
+                    <img src="mobiles.jpg" height="80px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Mobiles
+                        </a>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:83px;" id="c2">
+                    <img src="electronic.jpg" height="85px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Electronics
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:83px;" id="c2">
+                    <img src="furniture2.jpg" height="85px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Furniture
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:90px;" id="c2">
+                    <img src="appliances.jpg" height="80px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Appliances
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:90px;" id="c2">
+                    <img src="travel1.jpg" height="80px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Travels
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:90px;" id="c2">
+                    <img src="bigsale.jpg" height="80px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">offers
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="Nav" id="col3">
+                <div class="card" style="width: 115px; height:90px;" id="c2">
+                    <img src="toy1.jpg" height="80px" width="100px">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="selection" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Toys & more
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Carousel -->
+    <div id="carouselExampleControls" class="carousel slide my-1" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img class="img-fluid w-100"
+                    src="https://rukminim2.flixcart.com/fk-p-flap/1688/280/image/f087885f5bc98f4f.jpg?q=50"
+                    alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid w-100"
+                    src="https://rukminim2.flixcart.com/fk-p-flap/1688/280/image/d78cf5a850f53253.png?q=50"
+                    alt="Third slide">
+            </div>
+            <div class="carousel-item active">
+                <img class="img-fluid w-100"
+                    src="https://rukminim2.flixcart.com/fk-p-flap/1688/280/image/e674893c3b0dd1a0.jpg?q=50"
+                    alt="First slide">
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href=" #carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+          
+
+
+    <!-- sales and banner -->
+    <div class="d-flex pt-2 my-3">
+        <div class="container-fluid bg-white pb-2 border" style="height: fit-content;">
+            <div class="row pt-3">
+                <div class="col slider-heading">
+                    <h4>Deals Of the Day</h4>
+                </div>
+                <div class="col col-sm-4 view-btn">
+                    <div>
+                        <button class="btn btn-primary shadow">View All</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row d-flex nowrap justify-content-center">
+                <div class="card text-center sales">
+                    <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="JioFi JMR 541 Data Card"
+                        src="https://rukminim2.flixcart.com/image/200/200/xif0q/smartwatch/o/l/i/-original-imagpsqjgdfzcez7.jpeg?q=70"
+                        srcset="https://rukminim2.flixcart.com/image/400/400/xif0q/smartwatch/o/l/i/-original-imagpsqjgdfzcez7.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/200/200/xif0q/smartwatch/o/l/i/-original-imagpsqjgdfzcez7.jpeg?q=70 1x">
+                    <div class="card-body p-1" title="Upto 60% off">
+                        <h6 class="card-title">Fire-Boltt Smartwatches</h6>
+                        <a href="#" class="card-link">From ₹1,099</a>
+                        <p class="card-subtitle text-muted">Best Deals For Limited Period!</p>
+                    </div>
+                </div>
+    
+
+                <div class="card text-center sales">
+                    <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Samsung Galaxy M11 (5000 mAh Battery)"
+                        src="https://rukminim1.flixcart.com/image/150/150/kavefm80/mobile/6/y/t/samsung-galaxy-m11-sm-m115fzkeins-original-imafscjyhxwghgwf.jpeg?q=70"
+                        srcset="https://rukminim1.flixcart.com/image/300/300/kavefm80/mobile/6/y/t/samsung-galaxy-m11-sm-m115fzkeins-original-imafscjyhxwghgwf.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kavefm80/mobile/6/y/t/samsung-galaxy-m11-sm-m115fzkeins-original-imafscjyhxwghgwf.jpeg?q=70 1x">
+                    <div class="card-body p-1" title="5000 mAh Battery">
+                        <h6 class="card-title">Samsung Galaxy M01</h6>
+                        <a href="#" class="card-link">5000 mAh Battery</a>
+                        <p class="card-subtitle text-muted">Now ₹10150</p>
+                    </div>
+                </div>
+
+                <div class="card text-center sales">
+                    <img class="card-img-top p-2 img-fluid w-100" alt="Woodland Men Brown Sports Sandals"
+                        src="https://rukminim2.flixcart.com/image/150/150/l0zm64w0/office-study-chair/c/7/b/-original-imagcnvjcbf82yeg.jpeg?q=70"
+                        srcset="https://rukminim2.flixcart.com/image/300/300/l0zm64w0/office-study-chair/c/7/b/-original-imagcnvjcbf82yeg.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/l0zm64w0/office-study-chair/c/7/b/-original-imagcnvjcbf82yeg.jpeg?q=70 1x">
+                    <div class="card-body p-1" title="Upto 50% Off">
+                        <h6 class="card-title">SUPREMA KVS</h6>
+                        <a href="#" class="card-link">65% Off</a>
+                        <p class="card-subtitle text-muted">Office Chaires</p>
+                    </div>
+                </div>
+
+                <div class="card text-center sales">
+                    <img class="card-img-top p-2 img-fluid w-100" alt="WDS Velvet 3 Seater Inflatable Sofa"
+                        src="https://rukminim2.flixcart.com/image/150/150/l4n2oi80/sofa-sectional/u/x/k/-original-imagfhzyvcjwgn2d.jpeg?q=70"
+                        srcset="https://rukminim2.flixcart.com/image/300/300/l4n2oi80/sofa-sectional/u/x/k/-original-imagfhzyvcjwgn2d.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/l4n2oi80/sofa-sectional/u/x/k/-original-imagfhzyvcjwgn2d.jpeg?q=70 1x">
+                    <div class="card-body p-1" title="Min 50% Off">
+                        <h6 class="card-title">Sofas</h6>
+                        <a href="#" class="card-link">Min 50% Off</a>
+                        <p class="card-subtitle text-muted">3 seater , 2 seater & More</p>
+                    </div>
+                </div>
+
+                <div class="card text-center sales">
+                    <img class="card-img-top p-2 img-fluid w-100"
+                        alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                        src="https://rukminim2.flixcart.com/image/150/150/xif0q/electric-kettle/w/g/r/-original-imaggkhdr4thnypr.jpeg?q=70"
+                        srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/electric-kettle/w/g/r/-original-imaggkhdr4thnypr.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/electric-kettle/w/g/r/-original-imaggkhdr4thnypr.jpeg?q=70 1x">
+                    <div class="card-body p-1" title="50-80% Off">
+                        <h6 class="card-title">Pigeon electric-kettle</h6>
+                        <a href="#" class="card-link">50-80% Off</a>
+                        <p class="card-subtitle text-muted">1.5 L,Silver,Black</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card ml-2 p-2" style="height: 15%;">
+            <img class="card-img img-fluid w-100"
+                src="https://rukminim2.flixcart.com/fk-p-flap/600/358/image/216b440e1b613660.png?q=70" alt="IKFS">
+        </div>
+    </div>
+
+    <!-- 3-Card Banner Section -->
+    <div class="container-fluid">
+        <div class="row row-cols-3">
+            <div class="col pl-0 pr-2">
+                <img class="img-fluid cur" alt="Furniture Bestsellers"
+                    srcset="https://rukminim1.flixcart.com/flap/960/960/image/084789479074d2b2.jpg?q=50 2x, https://rukminim1.flixcart.com/flap/480/480/image/084789479074d2b2.jpg?q=50 1x"
+                    src="https://rukminim1.flixcart.com/flap/480/480/image/084789479074d2b2.jpg?q=50">
+            </div>
+            <div class="col pl-0 pr-2">
+                <img class="img-fluid cur" alt="cv"
+                    srcset="https://rukminim1.flixcart.com/flap/960/960/image/280f4c9921a571d5.png?q=50 2x, https://rukminim1.flixcart.com/flap/480/480/image/280f4c9921a571d5.png?q=50 1x"
+                    src="https://rukminim1.flixcart.com/flap/480/480/image/280f4c9921a571d5.png?q=50">
+            </div>
+            <div class="col px-0">
+                <img class="img-fluid cur" alt="Wash5thFeb"
+                    srcset="https://rukminim1.flixcart.com/flap/960/960/image/1ce0c4c1fb501b45.jpg?q=50 2x, https://rukminim1.flixcart.com/flap/480/480/image/1ce0c4c1fb501b45.jpg?q=50 1x"
+                    src="https://rukminim1.flixcart.com/flap/480/480/image/1ce0c4c1fb501b45.jpg?q=50">
+            </div>
+        </div>
+    </div>
+
+    <!-- TV AND APPLIANCES -->
+    <div class="container-fluid bg-white my-1 py-2 border shadow">
+        <div class="row pt-3">
+            <div class="col">
+                <h4>TVs & Appliances</h4>
+            </div>
+            <div class="col col-sm-4 view-btn">
+                <div>
+                    <button class="btn btn-primary shadow">View All</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row d-flex nowrap justify-content-center">
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Usha Marvella Electric Sewing Machine"
+                    src="https://rukminim2.flixcart.com/image/150/150/l1dwknk0/induction-cook-top/3/e/w/-original-imagcynthja2cng4.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/l1dwknk0/induction-cook-top/3/e/w/-original-imagcynthja2cng4.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/l1dwknk0/induction-cook-top/3/e/w/-original-imagcynthja2cng4.jpeg?q=70" 1x">
+                <div class="card-body p-1" title="Shop Now!">
+                    <h6 class="card-title">Induction-cook-top</h6>
+                    <a href="#" class="card-link">Shop Now!</a>
+                    <p class="card-subtitle text-muted">Pigeon, Prestige &amp; more</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Inverters (Shop Now!)"
+                    src="https://rukminim2.flixcart.com/image/150/150/l15bxjk0/inverter/a/a/4/super-power-digital-ups-model-700-12v-dg-3-microtek-original-imagcs4uhzstqvef.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/l15bxjk0/inverter/a/a/4/super-power-digital-ups-model-700-12v-dg-3-microtek-original-imagcs4uhzstqvef.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/l15bxjk0/inverter/a/a/4/super-power-digital-ups-model-700-12v-dg-3-microtek-original-imagcs4uhzstqvef.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Shop Now!">
+                    <h6 class="card-title">Inverters</h6>
+                    <a href="#" class="card-link">Shop Now!</a>
+                    <p class="card-subtitle text-muted">Luminous, Microtek</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Inverters (Shop Now!)"
+                    src="https://rukminim2.flixcart.com/image/150/150/ktd9mkw0/pot-pan/e/d/n/kcfdcpwol230cc-kitchen-chef-original-imag6q6f8rcubgrt.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/ktd9mkw0/pot-pan/e/d/n/kcfdcpwol230cc-kitchen-chef-original-imag6q6f8rcubgrt.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/ktd9mkw0/pot-pan/e/d/n/kcfdcpwol230cc-kitchen-chef-original-imag6q6f8rcubgrt.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Shop Now!">
+                    <h6 class="card-title">Kitchen Chef Fry Pan</h6>
+                    <a href="#" class="card-link">Shop Now!</a>
+                    <p class="card-subtitle text-muted">Kitchen Chef Fry Pan</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Power Packed TVs for You! (Starting at ₹8,499)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/television/m/n/p/-original-imagkzctc2gkvfgf.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/television/m/n/p/-original-imagkzctc2gkvfgf.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/television/m/n/p/-original-imagkzctc2gkvfgf.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Starting at ₹8,499">
+                    <h6 class="card-title">Smart TVs</h6>
+                    <a href="#" class="card-link">Starting at ₹8,499</a>
+                    <p class="card-subtitle text-muted">HD , LED Smart Tizen TV </p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Philips Vacuum Cleaners (Run Time: 15 min)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/vacuum-cleaner/c/f/d/-original-imagrzw2vtndpe2g.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/vacuum-cleaner/c/f/d/-original-imagrzw2vtndpe2g.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/vacuum-cleaner/c/f/d/-original-imagrzw2vtndpe2g.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Run Time: 15 min">
+                    <h6 class="card-title">Philips Vacuum Cleaners</h6>
+                    <a href="#" class="card-link">Run Time: 15 min</a>
+                    <p class="card-subtitle text-muted">Maximum Sound Level</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Kaff Microwave Oven (Convection &amp; Grill)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/microwave-new/9/5/n/-original-imagk8skba6ebhnz.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/microwave-new/9/5/n/-original-imagk8skba6ebhnz.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/microwave-new/9/5/n/-original-imagk8skba6ebhnz.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Convection & Grill">
+                    <h6 class="card-title">IFB Microwave Oven</h6>
+                    <a href="#" class="card-link">Convection & Grill</a>
+                    <p class="card-subtitle text-muted">30 L & Touch Key Pad</p>
+                </div>
+            </div>
+
+        
+        </div>
+    </div>
+
+    <!-- Furniture Bestsellers Slider -->
+    <div class="container-fluid bg-white my- py-2 border shadow-sm">
+        <div class="row pt-3">
+            <div class="col slider-heading">
+                <h4>Furniture Bestsellers</h4>
+                <h6 class="text-muted">Furniture Bestsellers</h6>
+            </div>
+            <div class="col col-sm-4 view-btn">
+                <div>
+                    <button class="btn btn-primary shadow">View All</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row d-flex nowrap justify-content-center">
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100"
+                    alt="Swingzy Handmade Cotton Hanging Swing Cotton, Wooden Small Swing"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/hammock-swing/f/i/a/37-20-blksw002-duzo-original-imaggez6vpgbw49s.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/hammock-swing/f/i/a/37-20-blksw002-duzo-original-imaggez6vpgbw49s.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/hammock-swing/f/i/a/37-20-blksw002-duzo-original-imaggez6vpgbw49s.jpeg?q=70 1x">
+                <div class="card-body p-1" title="From ₹1,169">
+                    <h6 class="card-title">Swings</h6>
+                    <a href="#" class="card-link">From ₹1,169</a>
+                    <p class="card-subtitle text-muted">Trendy Collection</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100"
+                    alt="The Furniture Store XXXL Bean Bag Cover  (Without Beans)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/bean-bag/u/f/z/xxxl-beanbag-royal-blue-3xl-swiner-original-imagngtnuhxh6xgq.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/bean-bag/u/f/z/xxxl-beanbag-royal-blue-3xl-swiner-original-imagngtnuhxh6xgq.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/bean-bag/u/f/z/xxxl-beanbag-royal-blue-3xl-swiner-original-imagngtnuhxh6xgq.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 80% Off">
+                    <h6 class="card-title">Bean Bag Covers</h6>
+                    <a href="#" class="card-link">Min 80% Off</a>
+                    <p class="card-subtitle text-muted">XL, XXL & More</p>
+                </div>
+            </div>
+
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100"
+                    alt="The Furniture Store XXXL Bean Bag Cover  (Without Beans)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/bed/q/u/r/-original-imagpprfybspfbnh.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/bed/q/u/r/-original-imagpprfybspfbnh.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/bed/q/u/r/-original-imagpprfybspfbnh.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 59% Off">
+                    <h6 class="card-title"> Wood Queen Bed </h6>
+                    <a href="#" class="card-link">Min 59% Off</a>
+                    <p class="card-subtitle text-muted">Color-Walnut,Choclate &More</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100"
+                    alt="Flipkart Perfect Homes Julian Engineered Wood 4 Door Wardrobe"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/wardrobe-closet/b/l/r/-original-imagpprgbcsytggz.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/wardrobe-closet/b/l/r/-original-imagpprgbcsytggz.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/wardrobe-closet/b/l/r/-original-imagpprgbcsytggz.jpeg?q=70 1x">
+                <div class="card-body p-1" title="From ₹5,999">
+                    <h6 class="card-title">Wardrobes</h6>
+                    <a href="#" class="card-link">From ₹5,999</a>
+                    <p class="card-subtitle text-muted">By Flipkart Perfect Home & More</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Woodness Jenson Solid Wood Bunk Bed"
+                    src="https://rukminim1.flixcart.com/image/150/150/jsm3vrk0/bunk-loft-bed/w/b/q/na-rubber-wood-27035-woodness-dark-brown-original-imafe47eukgzsjkr.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/jsm3vrk0/bunk-loft-bed/w/b/q/na-rubber-wood-27035-woodness-dark-brown-original-imafe47eukgzsjkr.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/jsm3vrk0/bunk-loft-bed/w/b/q/na-rubber-wood-27035-woodness-dark-brown-original-imafe47eukgzsjkr.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Upto 78% off">
+                    <h6 class="card-title">Furniture Accessories</h6>
+                    <a href="#" class="card-link">Upto 78% off</a>
+                    <p class="card-subtitle text-muted">Bunk Beds, Benches ...</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="WDS Velvet 3 Seater Inflatable Sofa"
+                    src="https://rukminim2.flixcart.com/image/150/150/l4n2oi80/sofa-sectional/u/x/k/-original-imagfhzyvcjwgn2d.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/l4n2oi80/sofa-sectional/u/x/k/-original-imagfhzyvcjwgn2d.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/l4n2oi80/sofa-sectional/u/x/k/-original-imagfhzyvcjwgn2d.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 50% Off">
+                    <h6 class="card-title">Sofas</h6>
+                    <a href="#" class="card-link">Min 50% Off</a>
+                    <p class="card-subtitle text-muted">3 seater , 2 seater & More</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Marusthalee Designer Temple Solid Wood Home Temple"
+                    src="https://rukminim2.flixcart.com/image/416/416/ky90scw0/curtain/q/n/h/geometric-panel-hs2pc001423wd-window-eyelet-home-sizzler-original-imagajyytmurwrm2.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/416/416/ky90scw0/curtain/q/n/h/geometric-panel-hs2pc001423wd-window-eyelet-home-sizzler-original-imagajyytmurwrm2.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/416/416/ky90scw0/curtain/q/n/h/geometric-panel-hs2pc001423wd-window-eyelet-home-sizzler-original-imagajyytmurwrm2.jpeg?q=70" 1x">
+                <div class="card-body p-1" title="From &#x20B9;699">
+                    <h6 class="card-title">Curtains</h6>
+                    <a href="#" class="card-link">From &#x20B9;699</a>
+                    <p class="card-subtitle text-muted">Trendy Made In India Collections</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3-Card Banner Section -->
+    <div class="container-fluid">
+        <div class="row row-cols-3">
+            <div class="col pl-0 pr-2">
+                <img class="img-fluid cur" alt="SHA"
+                    srcset="https://rukminim2.flixcart.com/fk-p-flap/1200/1200/image/fc916120f9114c4c.jpg?q=50 2x, https://rukminim2.flixcart.com/fk-p-flap/890/890/image/fc916120f9114c4c.jpg?q=50 1x"
+                    src="https://rukminim2.flixcart.com/fk-p-flap/890/890/image/fc916120f9114c4c.jpg?q=50">
+            </div>
+            <div class="col px-0">
+                <img class="img-fluid cur" alt="Shirt"
+                    srcset="https://rukminim2.flixcart.com/fk-p-flap/1200/1200/image/26d07b724f01a3aa.jpg?q=50 2x, https://rukminim2.flixcart.com/fk-p-flap/890/890/image/26d07b724f01a3aa.jpg?q=50 1x"
+                    src="https://rukminim2.flixcart.com/fk-p-flap/890/890/image/26d07b724f01a3aa.jpg?q=50">
+            </div> 
+            <div class="col pl-0 pr-2">
+                <img class="img-fluid cur" alt="DT"
+                    srcset="https://rukminim2.flixcart.com/fk-p-flap/960/960/image/35a1a435b9b8a9b7.jpg?q=50 1x"
+                    src="https://rukminim2.flixcart.com/fk-p-flap/480/480/image/35a1a435b9b8a9b7.jpg?q=50 2x, https://rukminim2.flixcart.com/fk-p-flap/480/480/image/35a1a435b9b8a9b7.jpg?q=50 1x">
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div data-tkid="A_9e2bc916-2292-4bc1-bcef-1a4a5aa6c298_10">
+
+    </div>
+    <!-- Best of Electronics Slider -->
+    <div class="container-fluid bg-white my-3 py-2 border shadow-sm">
+        <div class="row pt-3">
+            <div class="col slider-heading">
+                <h4>Best of Electronics</h4>
+                <h6 class="text-muted">Devices and Accessories</h6>
+            </div>
+            <div class="col col-sm-4 view-btn">
+                <div>
+                    <button class="btn btn-primary shadow">View All</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row d-flex nowrap justify-content-center">
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Best Brands (Shop Now)"
+                    src="https://rukminim2.flixcart.com/image/200/200/xif0q/headphone/0/v/m/nord-buds-2-oneplus-original-imagnwf7sgjetqwg.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/400/400/xif0q/headphone/0/v/m/nord-buds-2-oneplus-original-imagnwf7sgjetqwg.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/200/200/xif0q/headphone/0/v/m/nord-buds-2-oneplus-original-imagnwf7sgjetqwg.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Shop Now!">
+                    <h6 class="card-title">Wireless Earphones</h6>
+                    <a href="#" class="card-link">From ₹499</a>
+                    <p class="card-subtitle text-muted">Apple,boAt,OnePlus</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="JioFi JMR 541 Data Card"
+                    src="https://rukminim2.flixcart.com/image/200/200/xif0q/smartwatch/o/l/i/-original-imagpsqjgdfzcez7.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/400/400/xif0q/smartwatch/o/l/i/-original-imagpsqjgdfzcez7.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/200/200/xif0q/smartwatch/o/l/i/-original-imagpsqjgdfzcez7.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Upto 60% off">
+                    <h6 class="card-title">Fire-Boltt Smartwatches</h6>
+                    <a href="#" class="card-link">From ₹1,099</a>
+                    <p class="card-subtitle text-muted">Best Deals For Limited Period!</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Logitech C310 HD Webcam"
+                    src="https://rukminim2.flixcart.com/image/200/200/xif0q/shopsy-power-bank/o/x/o/pp-111-10000-ambrane-original-imagg7nqgb8zr3zt.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/400/400/xif0q/shopsy-power-bank/o/x/o/pp-111-10000-ambrane-original-imagg7nqgb8zr3zt.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/200/200/xif0q/shopsy-power-bank/o/x/o/pp-111-10000-ambrane-original-imagg7nqgb8zr3zt.jpeg?q=70 1x">
+                <div class="card-body p-1" title="From ₹490">
+                    <h6 class="card-title">Ambrane Powerbank</h6>
+                    <a href="#" class="card-link">From ₹799</a>
+                    <p class="card-subtitle text-muted">Fast Charging | High Capacity</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Gaming Headsets (Best Selling)"
+                    src="https://rukminim2.flixcart.com/image/200/200/l31x2fk0/router/w/k/6/mr80x-mercusys-original-image9gvp3aefm2a.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/400/400/l31x2fk0/router/w/k/6/mr80x-mercusys-original-image9gvp3aefm2a.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/200/200/l31x2fk0/router/w/k/6/mr80x-mercusys-original-image9gvp3aefm2a.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Best Selling">
+                    <h6 class="card-title">Top Deals On Routers</h6>
+                    <a href="#" class="card-link">From ₹799</a>
+                    <p class="card-subtitle text-muted">Shop Now</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Best Selling Laptops (Upto 40% off)"
+                    src="https://rukminim1.flixcart.com/image/150/150/kctf0cw0/computer/7/j/c/dell-original-imaftuvztweg8kf8.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/kctf0cw0/computer/7/j/c/dell-original-imaftuvztweg8kf8.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kctf0cw0/computer/7/j/c/dell-original-imaftuvztweg8kf8.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Upto 40% Off">
+                    <h6 class="card-title">Best Selling Laptops</h6>
+                    <a href="#" class="card-link">Upto 40% Off</a>
+                    <p class="card-subtitle text-muted">Asus, Acer, Dell & More</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100"
+                    alt="BeFunky Back Cover for Apple iPhone X, Apple iPhone XS"
+                    src="https://rukminim1.flixcart.com/image/150/150/jd0jtzk0/cases-covers/back-cover/z/b/f/befunky-isimple-matte-finish-flexible-soft-tpu-skin-support-original-imafyfmje9mvkfea.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/jd0jtzk0/cases-covers/back-cover/z/b/f/befunky-isimple-matte-finish-flexible-soft-tpu-skin-support-original-imafyfmje9mvkfea.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/jd0jtzk0/cases-covers/back-cover/z/b/f/befunky-isimple-matte-finish-flexible-soft-tpu-skin-support-original-imafyfmje9mvkfea.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Just ₹159">
+                    <h6 class="card-title">For Vivo</h6>
+                    <a href="#" class="card-link">Just ₹159</a>
+                    <p class="card-subtitle text-muted">Plain Case Covers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Battery Phones Slider -->
+    <div class="container-fluid bg-white my-3 py-2 border shadow-sm">
+        <div class="row pt-3">
+            <div class="col slider-heading">
+                <h4>Best Battery Phones</h4>
+                <h6 class="text-muted">More than 4000mAh</h6>
+            </div>
+            <div class="col col-sm-4 view-btn">
+                <div>
+                    <button class="btn btn-primary shadow">View All</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row d-flex nowrap justify-content-center">
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="realme Narzo 10A (5000 mAh Battery)"
+                    src="https://rukminim1.flixcart.com/image/150/150/k8ddoy80/mobile/u/g/w/realme-narzo-10a-rmx2020-original-imafqechxsprgfgr.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/k8ddoy80/mobile/u/g/w/realme-narzo-10a-rmx2020-original-imafqechxsprgfgr.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/k8ddoy80/mobile/u/g/w/realme-narzo-10a-rmx2020-original-imafqechxsprgfgr.jpeg?q=70 1x">
+                <div class="card-body p-1" title="5000 mAh Battery">
+                    <h6 class="card-title">Realme Narzo 10A (White)</h6>
+                    <a href="#" class="card-link">5000 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹9999</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Poco X2 (4500 mAh Battery)"
+                    src="https://rukminim1.flixcart.com/image/150/150/k65d18w0/mobile/4/k/4/poco-x2-mzb9011in-original-imafzz2hbfkvftm5.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/k65d18w0/mobile/4/k/4/poco-x2-mzb9011in-original-imafzz2hbfkvftm5.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/k65d18w0/mobile/4/k/4/poco-x2-mzb9011in-original-imafzz2hbfkvftm5.jpeg?q=70 1x">
+                <div class="card-body p-1" title="4500 mAh Battery">
+                    <h6 class="card-title">POCO X2 (Atlantis Blue)</h6>
+                    <a href="#" class="card-link">4500 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹17499</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Moto Edge Plus (5000 mAh Battery)"
+                    src="https://rukminim1.flixcart.com/image/150/150/k9loccw0/mobile/h/f/h/motorola-racer-turbo-edge-xt2061-3-original-imafrcvgpqx23mcq.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/k9loccw0/mobile/h/f/h/motorola-racer-turbo-edge-xt2061-3-original-imafrcvgpqx23mcq.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/k9loccw0/mobile/h/f/h/motorola-racer-turbo-edge-xt2061-3-original-imafrcvgpqx23mcq.jpeg?q=70 1x">
+                <div class="card-body p-1" title="5000 mAh Battery">
+                    <h6 class="card-title">Motorola Edge+ (Thunder Grey)</h6>
+                    <a href="#" class="card-link">5000 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹64,999</p>
+                </div>
+            </div>
+
+
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Moto Edge Plus (5000 mAh Battery)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/mobile/q/t/h/galaxy-f54-5g-sm-e546bzshins-samsung-original-imagq79f82pfyzvh.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/mobile/q/t/h/galaxy-f54-5g-sm-e546bzshins-samsung-original-imagq79f82pfyzvh.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/mobile/q/t/h/galaxy-f54-5g-sm-e546bzshins-samsung-original-imagq79f82pfyzvh.jpeg?q=70 1x">
+                <div class="card-body p-1" title="6000 mAh Battery">
+                    <h6 class="card-title">SAMSUNG Galaxy F54 5G(Stardust Silver)</h6>
+                    <a href="#" class="card-link">6000 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹32,999</p>
+                </div>
+            </div>
+
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Moto Edge Plus (5000 mAh Battery)"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/mobile/b/f/m/-original-imagna3ezkdusyrz.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/mobile/b/f/m/-original-imagna3ezkdusyrz.jpeg?q=700 2x, https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/b/f/m/-original-imagna3ezkdusyrz.jpeg?q=70 1x">
+                <div class="card-body p-1" title="6000 mAh Battery">
+                    <h6 class="card-title">vivo V27 5G (Magic Blue)</h6>
+                    <a href="#" class="card-link">4600 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹36,999</p>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="OPPO A9 2020 (5000 mAh Battery)"
+                    src="https://rukminim1.flixcart.com/image/150/150/k51cpe80pkrrdj/mobile/z/y/h/oppo-a9-2020-cph1937-original-imafkhhxh2vsxnmq.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/k51cpe80pkrrdj/mobile/z/y/h/oppo-a9-2020-cph1937-original-imafkhhxh2vsxnmq.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/k51cpe80pkrrdj/mobile/z/y/h/oppo-a9-2020-cph1937-original-imafkhhxh2vsxnmq.jpeg?q=70 1x">
+                <div class="card-body p-1" title="5000 mAh Battery">
+                    <h6 class="card-title">OPPO A9 2020 (Marine Green)</h6>
+                    <a href="#" class="card-link">5000 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹15990</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Samsung Galaxy M11 (5000 mAh Battery)"
+                    src="https://rukminim1.flixcart.com/image/150/150/kavefm80/mobile/6/y/t/samsung-galaxy-m11-sm-m115fzkeins-original-imafscjyhxwghgwf.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/kavefm80/mobile/6/y/t/samsung-galaxy-m11-sm-m115fzkeins-original-imafscjyhxwghgwf.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kavefm80/mobile/6/y/t/samsung-galaxy-m11-sm-m115fzkeins-original-imafscjyhxwghgwf.jpeg?q=70 1x">
+                <div class="card-body p-1" title="5000 mAh Battery">
+                    <h6 class="card-title">Samsung Galaxy M11 (Black)</h6>
+                    <a href="#" class="card-link">5000 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹10150</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-5 img-fluid w-50" alt="Samsung Galaxy M01 (4000 mAh Battery)"
+                    src="https://rukminim1.flixcart.com/image/150/150/kavefm80/mobile/d/f/a/samsung-galaxy-m01-sm-m015gzbdins-original-imafscggmdqgt62q.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/kavefm80/mobile/d/f/a/samsung-galaxy-m01-sm-m015gzbdins-original-imafscggmdqgt62q.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/kavefm80/mobile/d/f/a/samsung-galaxy-m01-sm-m015gzbdins-original-imafscggmdqgt62q.jpeg?q=70 1x">
+                <div class="card-body p-1" title="4000 mAh Battery">
+                    <h6 class="card-title">Samsung Galaxy M01 (Blue)</h6>
+                    <a href="#" class="card-link">4000 mAh Battery</a>
+                    <p class="card-subtitle text-muted">Now ₹8354</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Deals on Fashion Slider -->
+    <div class="container-fluid bg-white my-3 py-2 border shadow-sm">
+        <div class="row pt-3">
+            <div class="col slider-heading">
+                <h4>Top Deals on Fashion</h4>
+            </div>
+            <div class="col col-sm-4 view-btn">
+                <div>
+                    <button class="btn btn-primary shadow">View All</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row d-flex nowrap justify-content-center">
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt=" Pearl Jewellery"
+                    src="https://rukminim2.flixcart.com/image/832/832/l2f20sw0/jewellery-set/n/s/w/cultured-na-sn001gb48i-embellish-ornaments-gallery-original-imagdrhgszremyvz.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/832/832/l2f20sw0/jewellery-set/n/s/w/cultured-na-sn001gb48i-embellish-ornaments-gallery-original-imagdrhgszremyvz.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/832/832/l2f20sw0/jewellery-set/n/s/w/cultured-na-sn001gb48i-embellish-ornaments-gallery-original-imagdrhgszremyvz.jpeg?q=70 1x">
+                <div class="card-body p-1" title="40-80% Off">
+                    <h6 class="card-title">Grand Pearl Jewellery</h6>
+                    <a href="#" class="card-link">40-80% Off</a>
+                    <p class="card-subtitle text-muted">Zaveri Pearls , Voylla &amp; more</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75" alt="Ishin Women Embroidered Anarkali Kurta" 
+                src="https://rukminim2.flixcart.com/image/150/150/xif0q/dress/g/g/e/m-gr3308-multi-harpa-original-imafwyxj28gzh83n-bb.jpeg?q=70" 
+                srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/dress/g/g/e/m-gr3308-multi-harpa-original-imafwyxj28gzh83n-bb.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/dress/g/g/e/m-gr3308-multi-harpa-original-imafwyxj28gzh83n-bb.jpeg?q=70 1x">
+                <div class="card-body p-1" title="From ₹593">
+                    <h6 class="card-title">Harpa</h6>
+                    <a href="#" class="card-link">From ₹593</a>
+                    <p class="card-subtitle text-muted"> Women Fit and Flare Multicolor Dress</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100"
+                    alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/blazer/1/g/u/-original-imagqshyzbm6w84z.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/blazer/1/g/u/-original-imagqshyzbm6w84z.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/blazer/1/g/u/-original-imagqshyzbm6w84z.jpeg?q=70 1x">
+                <div class="card-body p-1" title="50-80% Off">
+                    <h6 class="card-title">Peter England-Men Casual Blazer </h6>
+                    <a href="#" class="card-link">50-80% Off</a>
+                    <p class="card-subtitle text-muted">Hangup</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75"
+                    alt="Saara Digital Print, Floral Print Semi Stitched Lehenga Choli"
+                    src="https://rukminim1.flixcart.com/image/150/150/k7jdg280/lehenga-choli/m/h/f/free-na-102l10171-saara-original-imafprdmenpgbx2n.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/k7jdg280/lehenga-choli/m/h/f/free-na-102l10171-saara-original-imafprdmenpgbx2n.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/k7jdg280/lehenga-choli/m/h/f/free-na-102l10171-saara-original-imafprdmenpgbx2n.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 60% Off">
+                    <h6 class="card-title">Lehenga Cholis</h6>
+                    <a href="#" class="card-link">Min 60% Off</a>
+                    <p class="card-subtitle text-muted">Embeoidered</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Woodland Men Brown Sports Sandals"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/sandal/w/s/z/7-k6016l-paragon-pink-original-imagru6fvbdktuvz.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/sandal/w/s/z/7-k6016l-paragon-pink-original-imagru6fvbdktuvz.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/sandal/w/s/z/7-k6016l-paragon-pink-original-imagru6fvbdktuvz.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Upto 50% Off">
+                    <h6 class="card-title">Paragon</h6>
+                    <a href="#" class="card-link">Upto 50% Off</a>
+                    <p class="card-subtitle text-muted">Heels and Flats</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 img-fluid w-100" alt="Puma Jaunt IDP Running Shoes For Men"
+                    src="https://rukminim1.flixcart.com/image/150/150/k6s82vk0/shoe/9/q/9/373642-9-puma-peacoat-jaffa-orange-original-imafp64sswgfxt7f.jpeg?q=70"
+                    srcset="https://rukminim1.flixcart.com/image/300/300/k6s82vk0/shoe/9/q/9/373642-9-puma-peacoat-jaffa-orange-original-imafp64sswgfxt7f.jpeg?q=70 2x, https://rukminim1.flixcart.com/image/150/150/k6s82vk0/shoe/9/q/9/373642-9-puma-peacoat-jaffa-orange-original-imafp64sswgfxt7f.jpeg?q=70 1x">
+                <div class="card-body p-1" title="From &#x20B9;399">
+                    <h6 class="card-title">Puma</h6>
+                    <a href="#" class="card-link">From &#x20B9;1034</a>
+                    <p class="card-subtitle text-muted">Sports Shoes &amp; more</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Picks on Men's Clothing slider -->
+    <div class="container-fluid bg-white my-3 py-2 border shadow-sm">
+        <div class="row pt-3">
+            <div class="col slider-heading">
+                <h4>Top Picks On Men's Clothing</h4>
+            </div>
+            <div class="col col-sm-4 view-btn">
+                <div>
+                    <button class="btn btn-primary shadow">View All</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row slider d-flex nowrap justify-content-center">
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75"
+                    alt="Redwood Solid Single Breasted Party, Formal, Casual, Wedding Men Blazer"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/blazer/e/8/z/38-blazer-007707-chote-raja-collection-original-imagrxhp2hmpg22x.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/blazer/e/8/z/38-blazer-007707-chote-raja-collection-original-imagrxhp2hmpg22x.jpeg?q=70 2x,https://rukminim2.flixcart.com/image/150/150/xif0q/blazer/e/8/z/38-blazer-007707-chote-raja-collection-original-imagrxhp2hmpg22x.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Under ₹1500">
+                    <h6 class="card-title">Party blazers for men</h6>
+                    <a href="#" class="card-link">Under ₹2500</a>
+                    <p class="card-subtitle text-muted">Best Prices</p>
+                </div>
+            </div>
+
+            
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75" alt="Dennis Lingo Men Solid Casual Multicolor Shirt"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/shirt/o/j/w/m-czba-db-den-cazzba-original-imag5ydv3hazjb6g-bb.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/shirt/o/j/w/m-czba-db-den-cazzba-original-imag5ydv3hazjb6g-bb.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/shirt/o/j/w/m-czba-db-den-cazzba-original-imag5ydv3hazjb6g-bb.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 60% off">
+                    <h6 class="card-title">Denim Shirts</h6>
+                    <a href="#" class="card-link">70% off</a>
+                    <p class="card-subtitle text-muted">Not to be Missed!</p>
+                </div>
+            </div>
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75" alt="Puma Solid Men Hooded Black, Grey T-Shirt"
+                    src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/5/9/6/m-all-rbc-white-one-nb-nicky-boy-original-imagpycw749kqzdz.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/5/9/6/m-all-rbc-white-one-nb-nicky-boy-original-imagpycw749kqzdz.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/5/9/6/m-all-rbc-white-one-nb-nicky-boy-original-imagpycw749kqzdz.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min. 50% Off">
+                    <h6 class="card-title">T-Shirts</h6>
+                    <a href="#" class="card-link">Min. 50% Off</a>
+                    <p class="card-subtitle text-muted">U.S. Polo Assn, Adidas...</p>
+                </div>
+            </div>
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75" alt="KJS Solid Multicolor Lungi"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/dhoti/g/j/m/4-4mtr-cream-dhoti-goldjariline-yazhi-textiles-original-imagqej2hme2qchr.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/dhoti/g/j/m/4-4mtr-cream-dhoti-goldjariline-yazhi-textiles-original-imagqej2hme2qchr.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/dhoti/g/j/m/4-4mtr-cream-dhoti-goldjariline-yazhi-textiles-original-imagqej2hme2qchr.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 40% Off">
+                    <h6 class="card-title">Mundu</h6>
+                    <a href="#" class="card-link">Min 40% Off</a>
+                    <p class="card-subtitle text-muted">Cotton, Silk</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75" alt="Crease &amp; Clips Men Cargos"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/cargo/f/4/9/3xl-ss22bot331-fugazee-original-image2jkrjv4c6ww-bb.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/cargo/f/4/9/3xl-ss22bot331-fugazee-original-image2jkrjv4c6ww-bb.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/cargo/f/4/9/3xl-ss22bot331-fugazee-original-image2jkrjv4c6ww-bb.jpeg?q=70 1x">
+                <div class="card-body p-1" title="From ₹599">
+                    <h6 class="card-title">Cargos</h6>
+                    <a href="#" class="card-link">From ₹999</a>
+                    <p class="card-subtitle text-muted">Best Collection</p>
+                </div>
+            </div>
+
+            <div class="card text-center sales">
+                <img class="card-img-top p-2 ml-3 img-fluid w-75" alt="KJS Solid Multicolor Lungi"
+                    src="https://rukminim2.flixcart.com/image/150/150/xif0q/shirt/k/l/j/xl-wfg-marmic-fab-original-imagqmusb24tjhgr.jpeg?q=70"
+                    srcset="https://rukminim2.flixcart.com/image/300/300/xif0q/shirt/k/l/j/xl-wfg-marmic-fab-original-imagqmusb24tjhgr.jpeg?q=70 2x, https://rukminim2.flixcart.com/image/150/150/xif0q/shirt/k/l/j/xl-wfg-marmic-fab-original-imagqmusb24tjhgr.jpeg?q=70 1x">
+                <div class="card-body p-1" title="Min 40% Off">
+                    <h6 class="card-title">Casual shirt</h6>
+                    <a href="#" class="card-link">Min 40% Off</a>
+                    <p class="card-subtitle text-muted">Cotton, Silk</p>
+                </div>
+            </div>
+
+         
+
+
+           
+
+        </div>
+    </div>
+
+   
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col ml-md-3 Footer">
+                <h6>ABOUT</h6>
+                <div>
+                    <a href="#">Contact Us</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Flipkart Stories</a>
+                    <a href="#">Press</a>
+                    <a href="#">Flipkart</a>
+                    <a href="#">Wholesale</a>
+                </div>
+            </div>
+            <div class="col Footer">
+                <h6>HELP</h6>
+                <div>
+                    <a href="#">Payments</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Cancellation & Returns</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Report</a>
+                    <a href="#">Infringement</a>
+                </div>
+            </div>
+            <div class="col Footer">
+                <h6>POLICY</h6>
+                <div>
+                    <a href="#">Return Policy</a>
+                    <a href="#">Term of Use</a>
+                    <a href="#">Security</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">EPR Compliance</a>
+                </div>
+            </div>
+            <div class="col Footer">
+                <h6>SOCIAL</h6>
+                <div>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">You Tube</a>
+                </div>
+            </div>
+            <div class="col Footer border-left border-secondary">
+                <h6>Mail Us:</h6>
+                <div>
+                    <p>Flipkart Internet Private Limited,</p>
+                    <p>Buildings Alyssa, Begonia &</p>
+                    <p>Clove Embassy Tech Village,</p>
+                    <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                    <p>Bengaluru, 560103,</p>
+                    <p>Karnataka, India</p>
+                </div>
+            </div>
+            <div class="col Footer">
+                <h6>Registered Office Address:</h6>
+                <div>
+                    <p>Flipkart Internet Private Limited,</p>
+                    <p>Buildings Alyssa, Begonia &</p>
+                    <p>Clove Embassy Tech Village,</p>
+                    <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                    <p>Bengaluru, 560103,</p>
+                    <p>Karnataka, India</p>
+                    <p>CIN : U51109KA2012PTC066107</p>
+                    <p>Telephone: <a href="#" class="text-primary">1800 208 9898</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row border-top mt-5 py-3 border-secondary">
+            <div class="col">
+                <i class="fa fa-briefcase text-warning"></i>
+                <span>Sell On Flipkart</span>
+            </div>
+            <div class="col">
+                <i class="fab fa-stumbleupon-circle text-warning"></i>
+                <span>Advertise</span>
+            </div>
+            <div class="col">
+                <i class="fa fa-gift text-warning"></i>
+                <span>Gift Cards</span>
+            </div>
+            <div class="col">
+                <i class="fa fa-question-circle text-warning"></i>
+                <span>Help Center</span>
+            </div>
+            <div class="col col-md-2 col-xs-4">
+                <span>&copy; 2007-2020 Flipkart.com</span>
+            </div>
+            <div class="col col-md-5 col-xs-6">
+                <img class="img-fluid" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/payment-method_7934bc.svg">
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
