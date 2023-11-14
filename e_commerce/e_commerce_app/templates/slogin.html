@@ -1,0 +1,203 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <style media="screen">
+        *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  body{
+      background-color:#ffffff;
+      text-color:black;
+      background-image:/static/images/img-5.png
+
+  }
+  
+  
+  /* CSS for header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #6c757d;
+  }
+  
+  .header .logo {
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  
+  .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-right: 20px;
+  }
+  
+  
+  .nav-items a {
+    text-decoration: none;
+    color: #ffa436;
+    padding: 35px 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  
+  .background{
+      width: 430px;
+      height: 520px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+      
+  }
+  .background .shape{
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      border-radius: 50%;
+  }
+  .shape:first-child{
+      background: linear-gradient(
+        #ffa436,
+        #6c757d
+      );
+      left: -80px;
+      top: -40px;
+  }
+  .shape:last-child{
+      background: linear-gradient(
+          to right,
+          #ffa436,
+          #6c757d
+          
+      );
+      right: -30px;
+      bottom: 90px;
+  }
+  form{
+      height: 520px;
+      width: 400px;
+      top: 30%;
+      left: 50%;
+      padding: 50px 35px; 
+      position: absolute;
+      transform: translate(-50%,-50%);
+      text-color:black;
+   
+  }
+  form *{
+      font-family: 'Poppins',sans-serif;
+      
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+  }
+  form h3{
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 142px;
+      text-align: center;
+  }
+  
+  
+
+  label{
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins',sans-serif;
+    color:black;
+    
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color:black;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    
+
+   
+}
+textarea
+{
+    background-color:black;
+    color:white
+}
+  ::placeholder{
+      color:white;
+  }
+  button{
+      margin-top: 50px;
+      width: 100%;
+      background-color:black;
+      color: white;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+ 
+  
+      </style>
+  </head>
+  <body>
+    
+  
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+  </div>
+  <header class="header">
+    <img src="/static/images/logo.png">
+    
+    <nav class="nav-items">
+     <a href="http://127.0.0.1:8000/">Home</a>
+    
+    </nav>
+  </header>
+      <form method='post'>{% csrf_token %}
+          <h3>Login Here</h3>
+  
+          <label for="username">Username</label>
+          <input type="text" placeholder="Username" name="username">
+  
+          <label for="password">Password</label>
+          <input type="password" placeholder="Password" name="password">
+
+        
+        <br>
+        <br>
+        <input type="submit" value="Login">
+        <br> <br><br>
+        <br><br>
+        <br>
+         
+          <p>Not a registered user..!! <a href="http://127.0.0.1:8000/sregister/">Register Here</a></p>  <br>
+          <br>
+          <a href="">Forgot password</a>
+      </form>
+  </body>
+  </html>
+  
+ 
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    .form-control{
+        width: 700px;
+    }
+    .row{
+        margin-left: 32%;
+    }
+    body{
+        background: #f5f5f5;
+        background: linear-gradient(90deg, #f5f5f5 1%, #ffa436 75%, #6c757d);
+        color:white
+    }
+</style>
+<body>
+  
+    <img src="{% static 'images/img-5.png' %}" height='300px' style='margin-left:900px;margin-bottom:10px;'>
+    <center><h1>ADD CYCLE</h1></center>
+    <div class="row">
+        <form method='post' enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Bike Type</label>
+                        <div class="input-group mb-3" style="width:700px;">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Categories</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="categories">
+                              <option selected>Choose...</option>
+                              <option value="Mountain_Bikes">Mountain_Bikes</option>
+                              <option value="Electric_Bicycles">Electric_Bicycles</option>
+                              <option value="Road_Bikes">Road_Bikes</option>
+                              <option value="Hybrid_Bikes">Hybrid_Bikes</option>
+                              <option value="Folding_Bikes">Folding_Bikes</option>
+                              <option value="Comfort_Bikes">Comfort_Bikes</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Age Range</label>
+                        <div class="input-group mb-3" style="width:700px;">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Age Range</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="age_range">
+                              <option selected>Choose...</option>
+                              <option value="Kid">Kid</option>
+                              <option value="Big Kid">Big Kid</option>
+                              <option value="Youth">Youth</option>
+                              <option value="Adult">Adult</option>
+                              <option value="Kid,Big Kid">Kid,Big Kid</option>
+                              <option value="Youth, Adult, Big Kid">Youth, Adult, Big Kid</option>
+                            </select>
+                          </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Brand</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Brand Name eg:Hercules" name="brand">
+                    </div>
+                   
+                    
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Colour</label>
+                        <input type="color" id="favcolor" class="form-control" id="exampleFormControlInput1" name="color">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Price Details</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="₹" name="prize">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" for="customFile">Select an Image to Upload : </label>
+                        <input type="file" class="form-control" name="productimg"/>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer mb-5">
+            <center><input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

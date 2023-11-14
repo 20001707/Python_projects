@@ -1,0 +1,240 @@
+superuser::::::
+    one of the m0ost powerful part of django is the automatic admin interface .
+it reads metadata from your models to provide an interface where trusted users can manage contenbt on your site
+
+
+
+the function  django_str_() : which is used to convert  an object into
+string representation 
+
+
+
+  /* CSS for header */
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color:  #6c757d;
+        }
+        
+        .header .logo {
+          font-size: 25px;
+          font-family: 'Sriracha', cursive;
+          color: #000;
+          text-decoration: none;
+          margin-left: 30px;
+        }
+        
+        .nav-items {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          background-color: #f5f5f5;
+          margin-right: 20px;
+        }
+        
+        
+        .nav-items a {
+          text-decoration: none;
+          color: #ffa436;
+          padding: 35px 20px;
+          font-size: 16px;
+          font-weight: 500;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <img src="/static/images/logo.png">
+        
+        <nav class="nav-items">
+         <a href="http://127.0.0.1:8000/userindex_all/">Home</a>
+         <a href="http://127.0.0.1:8000/">Logout</a>
+        
+        </nav>
+      </header>
+
+
+
+
+
+
+       {% for i,j,k,l,m,n in data %} 
+
+        <img src="/static/images/{{k}}" width="200px" height="200px">
+        <div class="profile-card">
+        
+       
+        First Name  :   {{j}}<br><br>
+        Username    :   {{l}}<br><br>
+        Email ID    :   {{n}}<br><br>
+        Mobile Number    :{{m}}<br><br>
+
+        </div>
+        {% endfor %}
+
+
+
+
+
+
+        ### Authenticated user registration ###
+        super user have model in django
+
+
+
+
+        ###############################################################################################################
+        Class based django
+        Generic  
+
+        generic is a django inbuiltview parant class
+        they are advanced set of built in views that are used to implement the selection CRUD
+        using class based view we can easly handle the get and post request for a view
+
+        
+
+        post()  ::
+
+        it is used to input a data into a database field
+        we register , login , upload file using post()
+
+
+
+
+        get() ::
+
+        it is used to retrieve data from database
+
+        classess provided by generic:
+        1) CreateView : it is a view that is used for creating an instance /object
+        2) ListView : it is a view that is used to list all instance
+        3) UpdateView : It is a view that is used for editing an existing object and saving changes
+        4) DeleteView : it is a view that is used to delete an existing object
+        5) DetailView : it is used to get a single instance 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!DOCTYPE html>
+
+<html>
+  {% load static %}
+    <head>
+        <style>
+            .form-control{
+                width: 700px;
+            }
+            .row{
+                margin-left: 32%;
+            }
+            body{
+                background: #f5f5f5;
+                background: linear-gradient(90deg, #aed6f1 1%,#5dade2  75%, #3498db );
+                color:black;
+                font-size: 32px;
+                font-weight: 800px;
+               
+
+            }
+
+            .profile-card {
+				background: white;
+				width: 100%;
+				height:2500px;
+        align-items: center;
+				
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #3498db;
+              }
+              
+              .header .logo {
+                font-size: 25px;
+                font-family: 'Sriracha', cursive;
+                color: #000;
+                text-decoration: none;
+                margin-left: 30px;
+              }
+              
+              .nav-items {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: #f5f5f5;
+                margin-right: 20px;
+              }
+              
+              
+              .nav-items a {
+                text-decoration: none;
+                color: #ffa436;
+                padding: 35px 20px;
+                font-size: 16px;
+                font-weight: 500;
+              }
+			
+        </style>
+        
+    </head>
+    <body>
+        <header class="header">
+            <img src="/static/images/logo.png">
+            <nav class="nav-items">
+             <a href="http://127.0.0.1:8000/userindex_all/">Home</a>
+              {% comment %} <a href="127.0.0.1:8000/">Logout</a> {% endcomment %}
+            </nav>
+          </header>
+       
+
+        <img src="/static/{{img}}" width="200px" height="200px">
+        <div class="profile-card">
+        
+       
+        First Name  :   {{data.uname}}<br><br>
+        Username    :   {{data.username}}<br><br>
+        Email ID    :   {{data.uemail}}<br><br>
+        Mobile Number    :{{data.uphone}}<br><br>
+
+        </div>
+        
+
+        <script src="" async defer></script>
+    </body>
+</html>
+
+
+
+
+

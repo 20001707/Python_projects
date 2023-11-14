@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html>\
+    {% load static%}
+    <head>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+$brown: #786450;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#ffa436;
+  }
+  
+  .header .logo {
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  
+  .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-right: 20px;
+  }
+  
+  
+  .nav-items a {
+    text-decoration: none;
+    color: #ffa436;
+    padding: 35px 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  margin-top: -300px;
+  margin-left: -300px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+	background: #CA7C4E;
+  background: -webkit-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
+  background: -moz-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
+  background: -o-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
+  background: linear-gradient(to top right, #EEBE6C 0%, #CA7C4E 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEBE6C', endColorstr='#CA7C4E',GradientType=1 ); 
+  color: $brown;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+	height: 599px;
+	width: 720px;
+	margin-top: 30px;
+	background: #fff;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
+}
+
+.profile {
+	float: left;
+	width: 520px;
+	height: 420px;
+	text-align: center;
+	
+	.image {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		margin: 38px auto 0 auto;
+		
+		.circle-1 {
+			position: absolute;
+			box-sizing: border-box;
+			width: 76px;
+			height: 76px;
+			top: -3px;
+			left: -3px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: $brown $brown $brown transparent;
+			border-radius: 50%;
+			transition: all 1.5s ease-in-out;
+		}
+		
+		.circle-2 {
+			@extend .circle-1;
+			width: 82px;
+			height: 82px;
+			top: -6px;
+			left: -6px;
+			border-color: $brown transparent $brown $brown;
+		}
+		
+		img {
+			display: block;
+			border-radius: 50%;
+			background: #F5E8DF;
+		}
+		
+		&:hover {
+			cursor: pointer;
+			
+			.circle-1 {
+				transform: rotate(360deg);
+			}
+			
+			.circle-2 {
+				transform: rotate(-360deg);
+			}
+			
+		}
+		
+	}
+	
+	.name {
+		font-size: 35px;
+		font-weight: 600;
+		margin-top: 20px;
+	}
+	
+	.job {
+		font-size: 15px;
+		line-height: 15px;
+	}
+	
+	.actions {
+		margin-top: 33px;
+		
+		.btn {
+			display: block;
+			width: 190px;
+			height: 30px;
+			margin: 0 auto 10px auto;
+			background: none;
+			border: 1px solid $brown;
+			border-radius: 15px;
+			font-size: 18px;
+			font-weight: 600;
+			box-sizing: border-box;
+			transition: all .3s ease-in-out;
+			color: $brown;
+			
+			&:hover {
+				background: $brown;
+				color: #fff;
+			}
+		}
+	}
+	
+}
+
+.stats {
+	float: left;
+	
+	.box {
+		box-sizing: border-box;
+		width: 190px;
+		height: 199px;
+		background: #F5E8DF;
+		text-align: center;
+		padding-top: 28px;
+		transition: all .4s ease-in-out;
+		
+		{% comment %} &:hover {
+			background: #E1CFC2;
+			cursor: pointer;
+		} {% endcomment %}
+		
+		&:nth-child(2) {
+			margin: 1px 0;
+		}
+		
+	}
+	
+	span {
+		display: block;
+	}
+	
+	.value {
+		font-size: 20px;
+		font-weight: 600;
+	}
+	
+	.parameter {
+		font-size: 15px;
+	}
+	
+}
+
+        </style>
+
+       
+    </head>
+    <body>
+        <header class="header">
+            <img src="/static/images/logo.png">
+            <nav class="nav-items">
+             <a href="http://127.0.0.1:8000/userindex_all/">Home</a>
+              {% comment %} <a href="127.0.0.1:8000/">Logout</a> {% endcomment %}
+            </nav>
+          </header>
+        <div class="frame">
+            <div class="center">
+              
+                  <div class="profile">
+                      <div class="image">
+                          <div class="circle-1"></div>
+                          {% comment %} <div class="circle-2"></div> {% endcomment %}
+                          <img src="/static/{{img}}" width="70" height="70" alt="Jessica Potter">
+                      </div>
+                      
+                      <div class="name">{{data.uname}}</div>
+                      {% comment %} <div class="job">{{data.uemail}}</div> {% endcomment %}
+                      
+                      <div class="actions">
+                          <button class="btn">Edit</button>
+                          <button class="btn">My Orders</button>
+                      </div> 
+                  </div>
+                  
+                  <div class="stats">
+                      <div class="box">
+                          <span class="value">{{data.uusername}}</span>
+                          <span class="parameter">Username</span>
+                      </div>
+                      <div class="box">
+                          <span class="value">{{data.uphone}}</span>
+                          <span class="parameter">Phone Number</span>
+                      </div>
+					  <div class="box">
+						<span class="value">{{data.uemail}}</span>
+						<span class="parameter">Email</span>
+					</div>
+                      
+                  </div>
+            </div>
+          </div>
+      
+        
+        <script src="" async defer></script>
+    </body>
+</html>
